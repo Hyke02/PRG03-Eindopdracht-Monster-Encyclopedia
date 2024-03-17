@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=DM+Serif+Display:ital@0;1&family=Lora:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=DM+Serif+Display:ital@0;1&family=Lora:ital@0;1&family=Montserrat:ital,wght@0,600;1,600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: url("../images/css/dark_paper_background.png");
+    background-size: contain;
+}
+
+h1 {
+    font-size: 4rem;
+    font-family: "Cinzel", serif;
+    text-align: center;
+    color: White;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+h2.card-title {
+    font-family: "DM Serif Display", serif;
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+}
+
+h3.card-species-subtitle {
+    font-family: "Lora", serif;
+    margin-top: 0;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+}
+
+#monster-overview {
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(227px, 1fr));
+    justify-items: center;
+}
+
+.monster-card {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    width: 217px;
+    text-align: center;
+    transition: 0.3s;
+    transform-origin: center;
+
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.29);
+}
+
+.monster-card:hover {
+    position: relative;
+    z-index: 1;
+    transform: translateY(-1rem);
+
+}
+
+.monster-icon {
+    width: 120px;
+    margin: 20px 50px;
+    filter: drop-shadow(0px 0px 3px black);
+}
+
+.modal-detail-button {
+    display: block;
+    height: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    border: 0;
+    padding: 0 0;
+    margin: auto auto 20px;
+    background-color: transparent;
+
+    &:hover {
+        color: #ffb300;
+        filter: drop-shadow(0px 0px 4px #ffb300);
+        transition: all 0.1s ease-out;
+    }
+}
+
+.monster-card:hover .favorite-button {
+    filter: grayscale(1) brightness(1) opacity(0.4);
+}
+
+.favorite-button {
+    filter: grayscale(1) brightness(1) opacity(0);
+    width: 75px;
+    top: 173px;
+    left: 133px;
+    position: absolute;
+    cursor: pointer;
+    transition: all .15s ease-in;
+}
+
+.favorite-button:hover {
+    filter: grayscale(0) brightness(1) opacity(1) drop-shadow(0px 0px 4px #ffca57) !important;
+}
+
+.unfavorite-button {
+    width: 75px;
+    top: 173px;
+    left: 133px;
+    position: absolute;
+    cursor: pointer;
+    transition: all .15s ease-in;
+    filter: drop-shadow(0px 0px 4px #ffca57);
+}
+
+.unfavorite-button:hover {
+    filter: grayscale(1) brightness(1) opacity(0.5);
+}
+
+.modal {
+    overflow: visible;
+    opacity: 0;
+    transition: all 0.7s ease;
+    background: url("../images/css/dark_stone_background.png") no-repeat;
+    background-size: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border: none;
+    border-radius: 16px;
+    padding: 0;
+    filter: drop-shadow(-1px 9px 10px #0e0e0e);
+
+    width: 50vw;
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+    }
+}
+
+.modal-content {
+    width: 50vw;
+}
+
+h2.modal-title {
+    font-size: 3rem;
+    font-family: "DM Serif Display", serif;
+    color: white;
+    text-transform: uppercase;
+    margin: 20px 0 0;
+}
+
+h3.modal-subtitle {
+    font-size: 1.2rem;
+    font-family: "Lora", serif;
+    text-transform: uppercase;
+    margin: 0;
+    color: #ffb300;
+}
+
+.modal-content-name {
+    display: flex;
+}
+
+.modal[open] {
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
+.modal-close {
+    position: absolute;
+    top: 334px;
+    left: 30px;
+    color: goldenrod;
+    background: none;
+    border: 0;
+    font-weight: bold;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    max-width: 25vw;
+    margin: 0 20px 20px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.modal-content h1 {
+    font-family: "DM Serif Display", serif;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 0;
+    padding: 0 20px;
+    color: white;
+}
+
+.modal-icon {
+    width: 100px;
+    margin: 20px;
+    filter: drop-shadow(0px 0px 3px black);
+}
+
+.modal-full-art {
+    position: absolute;
+    bottom: -253px;
+    left: 371px;
+    filter: drop-shadow(0px 0px 3px black);
+}
+
+.fire {
+    background-color: #621616;
+    position: absolute;
+    right: 940px;
+    top: 36px;
+    width: 4vw;
+    border-radius: 16px 0px 0px 16px;
+}
+
+.dragon {
+    background-color: #68517e;
+    position: absolute;
+    right: 940px;
+    top: 36px;
+    width: 4vw;
+    border-radius: 16px 0px 0px 16px;
+}
+
+.ice {
+    background-color: #52857c;
+    position: absolute;
+    right: 940px;
+    top: 36px;
+    width: 4vw;
+    border-radius: 16px 0px 0px 16px;
+}
+
+.thunder {
+    background-color: #977412;
+    position: absolute;
+    right: 940px;
+    top: 36px;
+    width: 4vw;
+    border-radius: 16px 0px 0px 16px;
+}
+
+.game-title {
+    height: 175px;
+    width: 20vw;
+    position: absolute;
+    top: -233px;
+}
+
+.spinning-img {
+
+}
