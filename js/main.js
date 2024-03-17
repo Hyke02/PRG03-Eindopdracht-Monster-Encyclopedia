@@ -1,6 +1,6 @@
 window.addEventListener('load', init);
 
-const apiUrl = 'http://localhost/PRG03-Eindopdracht/webservice-start';
+const apiUrl = 'https://hyke02.github.io/PRG03-Eindopdracht-Monster-Encyclopedia/webservice-start';
 let monsterOverview
 
 let favMonster = JSON.parse(localStorage.getItem(`favMonster`)) || []
